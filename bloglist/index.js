@@ -3,15 +3,7 @@ const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
 const logger = require('./utils/logger')
-const blogSchema = new mongoose.Schema({
-  title: String,
-  author: String,
-  url: String,
-  likes: Number
-})
-
-
-const Blog = mongoose.model('Blog', blogSchema)
+const Blog = require('./models/blog')
 const password = process.argv[2]
 const mongoUrl = `mongodb+srv://shashanksinghzero:${password}@cluster0.zxqbevh.mongodb.net/Bloglist?retryWrites=true&w=majority`
 mongoose.connect(mongoUrl)
