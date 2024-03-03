@@ -1,10 +1,11 @@
+const config = require('./utils/config')
 const express = require('express')
+const logger = require('./utils/logger')
 const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
-const logger = require('./utils/logger')
-const Blog = require('./models/blog')
-const password = process.argv[2]
+
+const {PORT, password} = require('./utils/config')
 const mongoUrl = `mongodb+srv://shashanksinghzero:${password}@cluster0.zxqbevh.mongodb.net/Bloglist?retryWrites=true&w=majority`
 mongoose.connect(mongoUrl)
 const blogsRouter = require('./controllers/blogs')
@@ -32,7 +33,8 @@ app.use('/api/blogs',blogsRouter)
 //     })
 // })
 
-const PORT = 3003
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  logger.info(`Server running on port ${PORT}`)
 })
+
+

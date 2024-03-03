@@ -1,9 +1,9 @@
 require('dotenv').config()
 
-const PORT = process.env.PORT
-const MONGODB_URI = process.env.MONGODB_URI
+const PORT = 3000
+const password = process.argv[2]
 
 module.exports = {
-  MONGODB_URI,
-  PORT
+  PORT,
+  password
 }

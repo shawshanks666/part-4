@@ -16,12 +16,12 @@ blogsRouter.get('/', (request, response) => {
   
 blogsRouter.post('/', (request, response) => {
   const blog = new Blog(request.body)
-  
-  Blog
+  console.log(blog)
+  blog
     .save()
     .then(result => {
       response.status(201).json(result)
     })
 })
   
-  module.exports = blogsRouter
+  module.exports = blogsRouter;
