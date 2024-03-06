@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "start index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +16,8 @@
     "mongodb": "^6.3.0",
     "mongoose": "^7.6.9",
     "nodemon": "^3.0.3"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.4"
   }
 }
